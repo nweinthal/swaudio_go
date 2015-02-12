@@ -1,0 +1,66 @@
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|Raleway:400,600,800,200' rel='stylesheet' type='text/css'>
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+<link rel="stylesheet" type="text/css" href="/static/css_tweaks.css">
+body { padding-top: 50px; }
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#" style="font-family:'Raleway', sans-serif; font-weight:600">swaudio GO | <span style="font-family:'Lato'; font-weight:300;">beta </span></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#">Request a System</a></li>
+        <li><a href="#">Available Equipment</a></li>
+        <li><a href="#">How to Use</a></li>
+        <li><a href="#">Report a Problem</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">For Student Workers <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Login</a></li>
+            <li><a href="#">View Reservations</a></li>
+            <li><a href="#">Place a Hold</a></li>
+            <li><a href="/admin">Administration</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!---
+    <div class="jumbotron">
+  <h1>Ready, Set, GO!</h1>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">Reserve Now</a></p>
+  </div> -->
+ <main class="masthead" id="content" role="main">
+  <div class="container">
+    <p class="lead">Ready, Set, GO!</p>
+    <p class="lead"> Swaudio GO is a free, quick, and easy way to bring big sound to smaller events and meetings on campus </p>
+    <p class="lead">
+      <a href="getting-started#download" 
+          class="btn btn-outline-inverse btn-lg" >Reserve Now</a>
+    </p>
+  </div>
+</main>
+{# Read the documentation for more information #}

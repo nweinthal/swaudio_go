@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+{% block content %}
+{# Display a form #}
+
+<!-- Button trigger modal -->
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Request Form</h4>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post" class="form">
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+                    {% buttons %}
+                    <button type="submit" class="btn btn-primary">
+                        Submit
+                    </button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    {% endbuttons %}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<main class="masthead" id="content" role="main" style="margin-top:30px">
+
+{% if message %}
+<div class="alert alert-info" role="alert">
+      <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
+        <span class="sr-only">Message:</span>
+        {{message}}
+</div>
+{% endif %}
+{% if warn %}
+<div class="alert alert-warning" role="alert">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Warning:</span>
+        {{warn}}
+</div>
+{% endif %}
+{% if error %}
+<div class="alert alert-danger" role="alert">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>
+        {{error}}
+</div>
+{% endif %}
+
+<div class="container">
+    <p class="lead"><h2>Ready, Set, GO!</h2></p>
+    <p class="lead"> Swaudio GO is a free, quick, and easy way to bring big sound to smaller events and meetings on campus </p>
+    <p class="lead">
+    <a href=""
+       data-toggle="modal" data-target="#myModal"
+                           class="btn btn-outline-inverse btn-lg" >Reserve Now</a>
+    </p>
+</div>
+</main>
+
+{% endblock %}
+{# Read the documentation for more information #}
